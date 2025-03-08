@@ -87,6 +87,6 @@ $ aws cloudformation describe-stack-resource-drifts ...
 ### Step 6: Rectify the stack using a change set
 Once drift has been detected, the resource can be modified to the expected value in the CloudFormation template. To do this, we can use a Change Set, and then implement the changes to the environment.
 ```bash
-$ aws cloudformation create-change-set --stack-name Demo_WebServer --change-set-name Demo_Change_set --parameters ParameterKey=InstanceyType,ParameterValue=t2.micro, --template-body file://cf_stack-CS.yaml
+$ aws cloudformation create-change-set --stack-name Demo_WebServer --change-set-name Demo_Change_set --parameters ParameterKey=InstanceType,ParameterValue=t2.micro, --template-body file://cf_stack-CS.yaml
 ```
 Once the Change Set has been created, it will appear under the original stack. The next step would be to **Execute change set** and if the rollback is successful the Change Set is no longer available.
