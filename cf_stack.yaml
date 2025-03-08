@@ -25,7 +25,6 @@ Parameters:
       - t2.micro
       - t2.small
     ConstraintDescription: must be a valid EC2 instance type.
-  ## TASK 2.1 - END
   LatestAmiId:
     Description: Find the current AMI ID using System Manager Parameter Store
     Type: 'AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>'
@@ -79,16 +78,15 @@ Resources:
       Tags:
         - Key: Application
           Value: !Ref 'AWS::StackId'
-  ## Route resource
-  # TASK 2.2 - BEGIN: Configure the resource definition for Route
   Route:
-    Type:
+    Type: 'AWS::EC2::Route'
     DependsOn:
+      - VPC
+      - AttachGateway
     Properties:
-      RouteTableId: 
-      DestinationCidrBlock: 
-      GatewayId: 
-  # TASK 2.2 - END
+      RouteTableId: !Ref RouteTable
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref InternetGateway
   SubnetRouteTableAssociation: 
     Type: 'AWS::EC2::SubnetRouteTableAssociation'
     DependsOn:
@@ -339,8 +337,6 @@ Outputs:
         !GetAtt 
           - InstanceSecurityGroup
           - GroupId
-# TASK 2.3 - BEGIN: Configure the output definition for AppURL
   AppURL:
-    Description:
-    Value:
-# TASK 2.3 - END
+    Description: Newly created application URL
+    Value: !Sub 'http://${WebServerInstance.PublicIp}'
