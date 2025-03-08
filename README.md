@@ -1,5 +1,4 @@
-# Detecting stack drift with CloudFormation
-
+# Mastering CloudFormation: Hands-on Detection and Remediation of Infrastructure Drift
 ## Overview
 This is a demo of how to create a stack using AWS CloudFormation, detect drift in the stack, and perform a stack update. The demo task is creating an environment for a dev team, who asked for an Apache server with HTTP access. The stack consists of the following:
 - A dedicated VPC
