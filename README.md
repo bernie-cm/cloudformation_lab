@@ -68,8 +68,9 @@ $ aws cloudformation describe-stacks --stack-name Demo_Web_Server --query "Stack
 $ "CREATE_COMPLETE" # This is the desired output
 ```
 **Stack creation complete**
-(https://github.com/bernie-cm/cloudformation_lab/blob/main/assets/20250308_cloudformation_stack_created.png)
-**INSERT PHOTO OF THE OUTPUT CREATED IN THE STACK**
+[!Link](https://github.com/bernie-cm/cloudformation_lab/blob/main/assets/20250308_cloudformation_stack_created.png)
+**Using outputs during stack creation**
+[!Link](https://github.com/bernie-cm/cloudformation_lab/blob/main/assets/20250308_cloudformation_outputs.png)
 
 ### Step 5: Testing drift detection in a CloudFormation stack
 CloudFormation is powerful because it can be used to detect stack changes **not initiated within CloudFormation**. In other words, if someone were to make changes to the stack using the AWS Console, CloudFormation can be used to detect and rectify those changes.
