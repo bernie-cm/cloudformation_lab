@@ -67,9 +67,9 @@ It might be useful to query the status of the stack process with the following c
 $ aws cloudformation describe-stacks --stack-name Demo_Web_Server --query "Stacks[0].StackStatus"
 $ "CREATE_COMPLETE" # This is the desired output
 ```
-**Stack creation complete**
+#### **Stack creation complete**
 ![Link](https://github.com/bernie-cm/cloudformation_lab/blob/main/assets/20250308_cloudformation_stack_created.png)
-**Using outputs during stack creation**
+### **Using outputs during stack creation**
 ![Link](https://github.com/bernie-cm/cloudformation_lab/blob/main/assets/20250308_cloudformation_outputs.png)
 
 ### Step 5: Testing drift detection in a CloudFormation stack
